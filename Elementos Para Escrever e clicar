@@ -1,0 +1,45 @@
+  # TesteDiferenteEmBackgroud
+  
+  	public void escreverInter(String texto, By elemento) {
+		
+		driver.findElement(elemento).sendKeys(texto);
+		
+	}
+	public void pesqInter(By elemento) {
+		
+		driver.findElement(elemento).submit();
+	}
+	public void clicar(By elemento) {
+		
+		driver.findElement(By.cssSelector("#rso > div:nth-child(1) > div > div > div > div > div > div > div.yuRUbf > a > div > cite")).click();
+	}
+    public void clicAbraConta(By elemento) {
+    	
+    	driver.findElement(By.xpath("//*[@id=\"gatsby-focus-wrapper\"]/div/header/div/div/div[3]/div/button")).click();
+    }
+	public void nomeInter(String nome, By elemento) {
+		
+		driver.findElement(elemento).sendKeys(nome);
+	}
+	public void telInter(String tel, By elemento) {
+	
+		driver.findElement(elemento).sendKeys(tel);
+	}
+	public void emailInter(String email, By elemento) {
+		
+		driver.findElement(elemento).sendKeys(email);
+	}
+	
+	public void cpfInter(String cpf, By elemento) {
+		
+		driver.findElement(elemento).sendKeys(cpf);
+	}
+	public void dtNascInter(String data, By elemento) {
+		
+		driver.findElement(elemento).sendKeys(data);
+	}
+	public void fechar() {
+		
+		driver.quit();
+	}
+}
