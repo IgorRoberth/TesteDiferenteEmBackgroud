@@ -1,0 +1,121 @@
+# TesteDiferenteEmBackgroud
+
+public class Steps {
+
+	Metodos metodos = new Metodos();
+	Elementos el = new Elementos();
+	Numetodos nu = new Numetodos();
+	Nuelementos elem = new Nuelementos();
+	Orimetodos orim = new Orimetodos();
+	Orielementos orelem = new Orielementos();
+
+	@Given("que eu esteja no site {string}")
+	public void que_eu_esteja_no_site(String site) {
+
+		metodos.abrirNavegador(site);
+
+	}
+
+	@When("entro no site inter")
+	public void entro_no_site_inter() throws IOException {
+
+		metodos.escreverInter("Banco Inter", el.pesquisaInter());
+		metodos.screenShot("pesquiso inter");
+		metodos.pesqInter(el.pesquisaInter());
+		metodos.screenShot("clico Inter");
+		metodos.clicar(el.entrarInter());
+		
+
+	}
+
+	@When("realizo o cadastro inter")
+	public void realizo_o_cadastro_inter() throws IOException {
+
+		metodos.clicAbraConta(el.clicAbra());
+		metodos.screenShot("clico em abra conta inter");
+		metodos.nomeInter("Drogba Souza Martinez", el.nomeInt());
+		metodos.telInter("11999439213", el.tel());
+		metodos.emailInter("automatizando@gmail.com", el.email());
+		metodos.cpfInter("575.063.680-13", el.cpf());
+		metodos.dtNascInter("21/02/1990", el.Date());
+		metodos.screenShot("Realizo o cadastro completo no inter");
+		
+	}
+
+	@Then("valido as informacoes do banco inter")
+	public void valido_as_informacoes_do_banco_inter() {
+
+		metodos.fechar();
+
+		System.out.println(">>>>>>>>>> PRIMEIRO TESTE FINALIZADO COM SUCESSO <<<<<<<<<<");
+
+	}
+
+	@When("entro no site nubank")
+	public void entro_no_site_nubank() throws IOException {
+
+		nu.escreverNu("Nubank", elem.nuPesq());
+		metodos.screenShot("Pesquiso nubank");
+		nu.pesqNu(elem.nuPesq());
+		nu.clickNu(elem.cliNu());
+		metodos.screenShot("acesso o nubank");
+
+	}
+
+	@When("realizo o cadastro nubank")
+	public void realizo_o_cadastro_nubank() throws IOException {
+
+		nu.cpfNu("977.906.970-48", elem.contNu());
+		metodos.screenShot("digito o cpf para acessar a tela de cadastro nubank");
+		nu.contiClick(elem.contNu());
+		nu.tituNu("Leonel Messi Da Silva", elem.tiNubank());
+		nu.nuEmail("automatizando@gmail.com", elem.emailNuBanck());
+		nu.confEmail("automatizando@gmail.com", elem.confNu());
+		metodos.screenShot("finalizo o cadastro nubank");
+
+	}
+
+	@Then("valido as informacoes do banco nubank")
+	public void valido_as_informacoes_do_banco_nubank() {
+
+		metodos.fechar();
+		System.out.println(">>>>>>>>>> SEGUNDO TESTE FINALIZADO COM SUCESSO <<<<<<<<<<");
+
+	}
+
+	@When("entro no site original")
+	public void entro_no_site_original() throws IOException {
+
+		orim.escreveOriginal("Banco Original", orelem.pesqOrigi());
+		metodos.screenShot("pesquiso banco original");
+		orim.pesqOriginal(orelem.pesqOrigi());
+		orim.cliOrigi(orelem.entOriginal());
+		metodos.screenShot("acesso banco original");
+		orim.abriOriginal(orelem.contaOrig());
+		orim.cokies(orelem.cok());
+		metodos.screenShot("clico no cokies da página");
+		orim.acessarCadast(orelem.cadasT());
+		metodos.screenShot("clico em abrir nova conta");
+	}
+
+	@When("realizo o cadastro original")
+	public void realizo_o_cadastro_original() throws IOException {
+
+		orim.nomeOrigi("Carlito Tevez Almeida", orelem.nameOri());
+		orim.teleOrig("11945738299", orelem.telOrig());
+		orim.emOrigi("automatizando@gmail.com", orelem.emailOrig());
+		orim.cpfOriginal("860.488.170-02", orelem.cpfOrigi());
+	    metodos.screenShot("Realizo o cadastro no banco original");
+	}
+
+	@Then("valido as informacoes do banco original")
+	public void valido_as_informacoes_do_banco_original() {
+
+		metodos.fechar();
+
+		System.out.println(">>>>>>>>>> TERCEIRO TESTE FINALIZADO COM SUCESSO <<<<<<<<<<");
+
+		System.out.println(">>>>>>>>>> OS TRÊS TESTES FORAM FINALIZADOS COM SUCESSO <<<<<<<<<<<");
+	}
+
+}
