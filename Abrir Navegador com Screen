@@ -1,0 +1,24 @@
+# TesteDiferenteEmBackgroud
+
+public class Metodos {
+
+ protected static WebDriver driver;
+
+	public void abrirNavegador(String site) {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Driver\\chromedriver.exe");
+		setDriver(new ChromeDriver());
+		driver.get(site);
+		driver.manage().window().maximize();
+
+	}
+	
+	public void screenShot(String nome) throws IOException {
+		
+		TakesScreenshot srcShot = ((TakesScreenshot)driver);
+		File srcFile = srcShot.getScreenshotAs(OutputType.FILE);
+		File desFile = new File("./src/screenbanco/" + nome + ".png");
+		FileUtils.copyFile(srcFile, desFile);
+		
+	}
+}
